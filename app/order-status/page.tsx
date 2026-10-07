@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { supabase } from "@/app/lib/supabase";
 
@@ -17,7 +17,7 @@ const STATUS_STEPS: OrderStatus[] = [
   "Completed",
 ];
 
-export default function OrderStatusPage() {
+function OrderStatusContent() {
   const searchParams = useSearchParams();
 
   const orderNumber = searchParams.get("order");
@@ -566,4 +566,26 @@ export default function OrderStatusPage() {
   );
 }
 
-
+export default function OrderStatusPage() {
+  return (
+    <Suspense
+      fallback={
+        <main
+          style={{
+            minHeight: "100vh",
+            background: "#08090c",
+            color: "white",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            fontFamily: "Arial, sans-serif",
+          }}
+        >
+          Loading order status...
+        </main>
+      }
+    >
+      <OrderStatusContent />
+    </Suspense>
+  );
+}

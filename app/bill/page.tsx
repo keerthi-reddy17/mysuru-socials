@@ -1,6 +1,11 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import {
+  Suspense,
+  useEffect,
+  useMemo,
+  useState,
+} from "react";
 import { useSearchParams } from "next/navigation";
 import { QRCodeSVG } from "qrcode.react";
 import { supabase } from "../lib/supabase";
@@ -32,7 +37,7 @@ const RESTAURANT_UPI_ID = "restaurant@upi";
 const RESTAURANT_NAME = "Mysuru Socials";
 const WHATSAPP_NUMBER = "919999999999";
 
-export default function BillPage() {
+function BillContent() {
   const searchParams = useSearchParams();
 
   const [tableNumber, setTableNumber] =
@@ -195,14 +200,6 @@ export default function BillPage() {
     const initializeBill =
       async () => {
         try {
-          /*
-           * If the order ID is supplied,
-           * use that exact order first.
-           *
-           * This prevents the bill from
-           * depending on an old browser
-           * session ID.
-           */
           if (orderParam) {
             const {
               data: exactOrder,
@@ -247,10 +244,6 @@ export default function BillPage() {
               return;
             }
 
-            /*
-             * Verify the order belongs
-             * to the requested table.
-             */
             const {
               data: table,
               error: tableError,
@@ -285,12 +278,6 @@ export default function BillPage() {
               table.id
             );
 
-            /*
-             * Save the exact order's
-             * session ID so all later
-             * orders from this dining
-             * session appear together.
-             */
             const exactSessionId =
               exactOrder.session_id;
 
@@ -303,10 +290,6 @@ export default function BillPage() {
               exactSessionId
             );
 
-            /*
-             * Now load every order from
-             * this table + session.
-             */
             await loadBill(
               parsedTable,
               exactSessionId
@@ -315,9 +298,6 @@ export default function BillPage() {
             return;
           }
 
-          /*
-           * Normal /bill?table=1 access.
-           */
           let currentSessionId =
             localStorage.getItem(
               "mysuru-socials-session-id"
@@ -1875,5 +1855,29 @@ export default function BillPage() {
         }
       `}</style>
     </main>
+  );
+}
+
+export default function BillPage() {
+  return (
+    <Suspense
+      fallback={
+        <main
+          style={{
+            minHeight: "100vh",
+            background: "#08090c",
+            color: "white",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            fontFamily: "Arial, sans-serif",
+          }}
+        >
+          Preparing your bill...
+        </main>
+      }
+    >
+      <BillContent />
+    </Suspense>
   );
 }
