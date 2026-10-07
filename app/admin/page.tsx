@@ -2,6 +2,9 @@
 
 import Link from "next/link";
 
+const GOLD = "#bfa46f";
+const GOLD_LIGHT = "#d6c08a";
+
 const dishes = [
   {
     name: "Paneer Shashlik Sizzler",
@@ -46,7 +49,7 @@ export default function Home() {
     <main className="min-h-screen overflow-x-hidden bg-[#050505] text-white">
 
       {/* NAVBAR */}
-      <header className="fixed left-0 right-0 top-0 z-50 border-b border-[#d4af37]/25 bg-black/95 backdrop-blur-xl">
+      <header className="fixed left-0 right-0 top-0 z-50 border-b border-[#bfa46f]/20 bg-[#050505]/95 backdrop-blur-xl">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 lg:px-10">
 
           <Link
@@ -54,49 +57,54 @@ export default function Home() {
             className="text-sm font-bold tracking-[0.28em] text-white"
           >
             MYSORE
-            <span className="text-[#d4af37]"> SOCIALS</span>
+            <span style={{ color: GOLD }}> SOCIALS</span>
           </Link>
 
           <nav className="hidden items-center gap-8 text-sm md:flex">
 
             <Link
               href="/"
-              className="font-medium text-[#d4af37] transition hover:text-[#f0cf5a]"
+              className="font-medium transition hover:text-[#d6c08a]"
+              style={{ color: GOLD }}
             >
               Home
             </Link>
 
             <a
               href="#experience"
-              className="text-white/75 transition hover:text-[#d4af37]"
+              className="text-white/75 transition hover:text-[#d6c08a]"
             >
               Experience
             </a>
 
             <Link
               href="/menu"
-              className="text-white/75 transition hover:text-[#d4af37]"
+              className="text-white/75 transition hover:text-[#d6c08a]"
             >
               Menu
             </Link>
 
             <Link
               href="/venue"
-              className="text-white/75 transition hover:text-[#d4af37]"
+              className="text-white/75 transition hover:text-[#d6c08a]"
             >
               Venue
             </Link>
 
             <Link
               href="/contact"
-              className="text-white/75 transition hover:text-[#d4af37]"
+              className="text-white/75 transition hover:text-[#d6c08a]"
             >
               Contact
             </Link>
 
             <Link
               href="/booking"
-              className="rounded-full border border-[#d4af37] px-5 py-2.5 font-medium text-[#d4af37] transition hover:bg-[#d4af37] hover:text-black"
+              className="rounded-full border px-5 py-2.5 font-medium transition hover:bg-[#bfa46f] hover:text-black"
+              style={{
+                borderColor: GOLD,
+                color: GOLD,
+              }}
             >
               Book a Table
             </Link>
@@ -105,7 +113,8 @@ export default function Home() {
 
           <Link
             href="/booking"
-            className="rounded-full bg-[#d4af37] px-5 py-2.5 text-xs font-bold text-black transition hover:bg-[#f0cf5a]"
+            className="rounded-full px-5 py-2.5 text-xs font-bold text-black transition hover:brightness-110"
+            style={{ backgroundColor: GOLD }}
           >
             Book
           </Link>
@@ -125,11 +134,11 @@ export default function Home() {
             className="h-full w-full object-cover"
           />
 
-          <div className="absolute inset-0 bg-black/75" />
+          <div className="absolute inset-0 bg-black/78" />
 
-          <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-black/40" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black via-black/85 to-black/45" />
 
-          <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-black/20 to-black/50" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-black/55" />
 
         </div>
 
@@ -140,9 +149,15 @@ export default function Home() {
 
             <div className="flex items-center gap-4">
 
-              <span className="h-px w-12 bg-[#d4af37]" />
+              <span
+                className="h-px w-12"
+                style={{ backgroundColor: GOLD }}
+              />
 
-              <p className="text-xs font-semibold uppercase tracking-[0.4em] text-[#d4af37]">
+              <p
+                className="text-xs font-semibold uppercase tracking-[0.4em]"
+                style={{ color: GOLD }}
+              >
                 Dining • Social • Celebrations
               </p>
 
@@ -155,7 +170,10 @@ export default function Home() {
 
               <br />
 
-              <span className="font-normal text-[#d4af37]">
+              <span
+                className="font-normal"
+                style={{ color: GOLD_LIGHT }}
+              >
                 Better moments.
               </span>
 
@@ -172,14 +190,15 @@ export default function Home() {
 
               <Link
                 href="/menu"
-                className="rounded-full bg-[#d4af37] px-8 py-4 text-sm font-bold text-black shadow-[0_8px_35px_rgba(212,175,55,0.25)] transition duration-300 hover:scale-105 hover:bg-[#f0cf5a]"
+                className="rounded-full px-8 py-4 text-sm font-bold text-black shadow-[0_8px_35px_rgba(191,164,111,0.18)] transition duration-300 hover:scale-105 hover:brightness-110"
+                style={{ backgroundColor: GOLD }}
               >
                 Explore Menu
               </Link>
 
               <Link
                 href="/booking"
-                className="rounded-full border border-white/50 bg-black/60 px-8 py-4 text-sm font-medium text-white backdrop-blur-md transition duration-300 hover:border-[#d4af37] hover:text-[#d4af37]"
+                className="rounded-full border border-white/45 bg-black/65 px-8 py-4 text-sm font-medium text-white backdrop-blur-md transition duration-300 hover:border-[#bfa46f] hover:text-[#d6c08a]"
               >
                 Book a Table
               </Link>
@@ -188,10 +207,13 @@ export default function Home() {
 
 
             {/* HERO INFO */}
-            <div className="mt-14 flex flex-wrap gap-x-12 gap-y-5 border-t border-white/30 pt-6">
+            <div className="mt-14 flex flex-wrap gap-x-12 gap-y-5 border-t border-white/25 pt-6">
 
               <div>
-                <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#d4af37]">
+                <p
+                  className="text-[10px] font-bold uppercase tracking-[0.3em]"
+                  style={{ color: GOLD }}
+                >
                   Experience
                 </p>
 
@@ -201,7 +223,10 @@ export default function Home() {
               </div>
 
               <div>
-                <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#d4af37]">
+                <p
+                  className="text-[10px] font-bold uppercase tracking-[0.3em]"
+                  style={{ color: GOLD }}
+                >
                   Location
                 </p>
 
@@ -211,7 +236,10 @@ export default function Home() {
               </div>
 
               <div>
-                <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#d4af37]">
+                <p
+                  className="text-[10px] font-bold uppercase tracking-[0.3em]"
+                  style={{ color: GOLD }}
+                >
                   Events
                 </p>
 
@@ -230,18 +258,21 @@ export default function Home() {
         {/* SCROLL INDICATOR */}
         <a
           href="#experience"
-          className="absolute bottom-8 right-6 z-10 hidden items-center gap-3 text-[10px] font-semibold uppercase tracking-[0.3em] text-white/70 md:flex"
+          className="absolute bottom-8 right-6 z-10 hidden items-center gap-3 text-[10px] font-semibold uppercase tracking-[0.3em] text-white/65 md:flex"
         >
           Scroll
 
-          <span className="h-px w-10 bg-[#d4af37]" />
+          <span
+            className="h-px w-10"
+            style={{ backgroundColor: GOLD }}
+          />
         </a>
 
       </section>
 
 
       {/* INTRO */}
-      <section className="border-b border-[#d4af37]/20 bg-[#050505] px-6 py-28 sm:py-36">
+      <section className="border-b border-[#bfa46f]/20 bg-[#050505] px-6 py-28 sm:py-36">
 
         <div className="mx-auto max-w-7xl">
 
@@ -249,7 +280,10 @@ export default function Home() {
 
             <div>
 
-              <p className="text-xs font-bold uppercase tracking-[0.4em] text-[#d4af37]">
+              <p
+                className="text-xs font-bold uppercase tracking-[0.4em]"
+                style={{ color: GOLD }}
+              >
                 The Socials Experience
               </p>
 
@@ -258,7 +292,10 @@ export default function Home() {
                 <br />
                 Leave with
                 <br />
-                <span className="font-normal text-[#d4af37]">
+                <span
+                  className="font-normal"
+                  style={{ color: GOLD_LIGHT }}
+                >
                   memories.
                 </span>
               </h2>
@@ -268,7 +305,7 @@ export default function Home() {
 
             <div>
 
-              <p className="max-w-2xl text-lg leading-8 text-white/75">
+              <p className="max-w-2xl text-lg leading-8 text-white/72">
                 Mysore Socials is designed around the simple things that make
                 going out special — good food, comfortable spaces and people
                 you actually want to spend time with.
@@ -276,7 +313,8 @@ export default function Home() {
 
               <Link
                 href="/menu"
-                className="mt-8 inline-flex items-center gap-3 text-sm font-semibold text-[#d4af37] transition hover:gap-5 hover:text-[#f0cf5a]"
+                className="mt-8 inline-flex items-center gap-3 text-sm font-semibold transition hover:gap-5 hover:text-[#d6c08a]"
+                style={{ color: GOLD }}
               >
                 Discover the menu
                 <span>→</span>
@@ -294,14 +332,17 @@ export default function Home() {
       {/* EXPERIENCE */}
       <section
         id="experience"
-        className="border-y border-[#d4af37]/25 bg-[#090909]"
+        className="border-y border-[#bfa46f]/20 bg-[#090909]"
       >
 
         <div className="mx-auto max-w-7xl px-6 py-28 lg:px-10">
 
           <div className="mb-14">
 
-            <p className="text-xs font-bold uppercase tracking-[0.4em] text-[#d4af37]">
+            <p
+              className="text-xs font-bold uppercase tracking-[0.4em]"
+              style={{ color: GOLD }}
+            >
               Why Mysore Socials
             </p>
 
@@ -314,22 +355,28 @@ export default function Home() {
           </div>
 
 
-          <div className="grid gap-px overflow-hidden rounded-[2rem] border border-[#d4af37]/30 bg-[#d4af37]/20 md:grid-cols-3">
+          <div className="grid gap-px overflow-hidden rounded-[2rem] border border-[#bfa46f]/25 bg-[#bfa46f]/15 md:grid-cols-3">
 
             {experiences.map((experience) => (
 
               <div
                 key={experience.number}
-                className="group bg-[#0d0d0d] p-8 transition duration-500 hover:bg-[#151208] sm:p-10"
+                className="group bg-[#0c0c0c] p-8 transition duration-500 hover:bg-[#12110e] sm:p-10"
               >
 
                 <div className="flex items-center justify-between">
 
-                  <span className="text-xs font-bold text-[#d4af37]">
+                  <span
+                    className="text-xs font-bold"
+                    style={{ color: GOLD }}
+                  >
                     {experience.number}
                   </span>
 
-                  <span className="text-[#d4af37]/40 transition group-hover:text-[#d4af37]">
+                  <span
+                    className="transition group-hover:text-[#d6c08a]"
+                    style={{ color: "rgba(191,164,111,0.4)" }}
+                  >
                     ✦
                   </span>
 
@@ -339,7 +386,7 @@ export default function Home() {
                   {experience.title}
                 </h3>
 
-                <p className="mt-4 leading-7 text-white/65">
+                <p className="mt-4 leading-7 text-white/62">
                   {experience.text}
                 </p>
 
@@ -363,7 +410,10 @@ export default function Home() {
 
             <div>
 
-              <p className="text-xs font-bold uppercase tracking-[0.4em] text-[#d4af37]">
+              <p
+                className="text-xs font-bold uppercase tracking-[0.4em]"
+                style={{ color: GOLD }}
+              >
                 From the menu
               </p>
 
@@ -375,7 +425,8 @@ export default function Home() {
 
             <Link
               href="/menu"
-              className="text-sm font-semibold text-[#d4af37] transition hover:text-[#f0cf5a]"
+              className="text-sm font-semibold transition hover:text-[#d6c08a]"
+              style={{ color: GOLD }}
             >
               View full menu →
             </Link>
@@ -389,7 +440,7 @@ export default function Home() {
 
               <article
                 key={dish.name}
-                className={`group overflow-hidden rounded-[2rem] border border-[#d4af37]/25 bg-[#0b0b0b] shadow-[0_25px_70px_rgba(0,0,0,0.5)] ${
+                className={`group overflow-hidden rounded-[2rem] border border-[#bfa46f]/22 bg-[#0a0a0a] shadow-[0_25px_70px_rgba(0,0,0,0.55)] ${
                   index === 1 ? "md:-translate-y-8" : ""
                 }`}
               >
@@ -406,7 +457,13 @@ export default function Home() {
 
                   <div className="absolute left-5 top-5">
 
-                    <span className="rounded-full border border-[#d4af37] bg-black/80 px-4 py-2 text-[10px] font-bold uppercase tracking-[0.25em] text-[#d4af37] backdrop-blur-md">
+                    <span
+                      className="rounded-full border bg-black/85 px-4 py-2 text-[10px] font-bold uppercase tracking-[0.25em] backdrop-blur-md"
+                      style={{
+                        borderColor: GOLD,
+                        color: GOLD,
+                      }}
+                    >
                       Signature Pick
                     </span>
 
@@ -423,7 +480,10 @@ export default function Home() {
                       {dish.name}
                     </h3>
 
-                    <span className="shrink-0 font-bold text-[#d4af37]">
+                    <span
+                      className="shrink-0 font-bold"
+                      style={{ color: GOLD_LIGHT }}
+                    >
                       {dish.price}
                     </span>
 
@@ -433,7 +493,7 @@ export default function Home() {
                     href={`/order?item=${encodeURIComponent(
                       dish.name
                     )}&price=${dish.price.replace("₹", "")}`}
-                    className="mt-6 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-white/55 transition group-hover:text-[#d4af37]"
+                    className="mt-6 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-white/55 transition group-hover:text-[#bfa46f]"
                   >
                     Order this
                     <span>→</span>
@@ -463,34 +523,41 @@ export default function Home() {
             className="absolute inset-0 h-full w-full object-cover"
           />
 
-          <div className="absolute inset-0 bg-black/75" />
+          <div className="absolute inset-0 bg-black/78" />
 
-          <div className="absolute inset-0 bg-gradient-to-r from-black/95 via-black/65 to-black/20" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/95 via-black/70 to-black/25" />
 
           <div className="relative z-10 mx-auto flex h-full max-w-7xl items-center px-6 lg:px-10">
 
             <div className="max-w-2xl">
 
-              <p className="text-xs font-bold uppercase tracking-[0.4em] text-[#d4af37]">
+              <p
+                className="text-xs font-bold uppercase tracking-[0.4em]"
+                style={{ color: GOLD }}
+              >
                 More than dining
               </p>
 
               <h2 className="mt-5 text-5xl font-light leading-[0.95] text-white sm:text-7xl">
                 Your celebration.
                 <br />
-                <span className="font-normal text-[#d4af37]">
+                <span
+                  className="font-normal"
+                  style={{ color: GOLD_LIGHT }}
+                >
                   Our space.
                 </span>
               </h2>
 
-              <p className="mt-7 max-w-xl leading-8 text-white/75">
+              <p className="mt-7 max-w-xl leading-8 text-white/72">
                 Planning something special? Explore our outdoor lawn and
                 indoor event space for gatherings and celebrations.
               </p>
 
               <Link
                 href="/venue"
-                className="mt-9 inline-flex rounded-full bg-[#d4af37] px-7 py-4 text-sm font-bold text-black shadow-[0_8px_35px_rgba(212,175,55,0.25)] transition hover:scale-105 hover:bg-[#f0cf5a]"
+                className="mt-9 inline-flex rounded-full px-7 py-4 text-sm font-bold text-black shadow-[0_8px_35px_rgba(191,164,111,0.2)] transition hover:scale-105 hover:brightness-110"
+                style={{ backgroundColor: GOLD }}
               >
                 Explore the Venue
               </Link>
@@ -505,11 +572,14 @@ export default function Home() {
 
 
       {/* FINAL CTA */}
-      <section className="border-b border-[#d4af37]/20 bg-[#050505] px-6 py-28 sm:py-36">
+      <section className="border-b border-[#bfa46f]/20 bg-[#050505] px-6 py-28 sm:py-36">
 
         <div className="mx-auto max-w-4xl text-center">
 
-          <p className="text-xs font-bold uppercase tracking-[0.4em] text-[#d4af37]">
+          <p
+            className="text-xs font-bold uppercase tracking-[0.4em]"
+            style={{ color: GOLD }}
+          >
             Your table awaits
           </p>
 
@@ -519,7 +589,7 @@ export default function Home() {
             a little better.
           </h2>
 
-          <p className="mx-auto mt-7 max-w-xl leading-7 text-white/65">
+          <p className="mx-auto mt-7 max-w-xl leading-7 text-white/62">
             Dinner with friends. A date. A celebration. Or simply a night
             where you don&apos;t feel like cooking.
           </p>
@@ -528,14 +598,15 @@ export default function Home() {
 
             <Link
               href="/booking"
-              className="rounded-full bg-[#d4af37] px-8 py-4 text-sm font-bold text-black transition hover:scale-105 hover:bg-[#f0cf5a]"
+              className="rounded-full px-8 py-4 text-sm font-bold text-black transition hover:scale-105 hover:brightness-110"
+              style={{ backgroundColor: GOLD }}
             >
               Book a Table
             </Link>
 
             <Link
               href="/menu"
-              className="rounded-full border border-white/40 px-8 py-4 text-sm font-medium text-white transition hover:border-[#d4af37] hover:text-[#d4af37]"
+              className="rounded-full border border-white/40 px-8 py-4 text-sm font-medium text-white transition hover:border-[#bfa46f] hover:text-[#d6c08a]"
             >
               Browse the Menu
             </Link>
@@ -548,7 +619,7 @@ export default function Home() {
 
 
       {/* FOOTER */}
-      <footer className="border-t border-[#d4af37]/20 bg-black px-6 py-12">
+      <footer className="border-t border-[#bfa46f]/20 bg-black px-6 py-12">
 
         <div className="mx-auto max-w-7xl">
 
@@ -561,10 +632,10 @@ export default function Home() {
                 className="text-xl font-bold tracking-[0.2em] text-white"
               >
                 MYSORE
-                <span className="text-[#d4af37]"> SOCIALS</span>
+                <span style={{ color: GOLD }}> SOCIALS</span>
               </Link>
 
-              <p className="mt-4 max-w-sm text-sm leading-7 text-white/55">
+              <p className="mt-4 max-w-sm text-sm leading-7 text-white/50">
                 Dining, drinks, celebrations and good times in Mysuru.
               </p>
 
@@ -575,28 +646,28 @@ export default function Home() {
 
               <Link
                 href="/menu"
-                className="text-white/65 transition hover:text-[#d4af37]"
+                className="text-white/65 transition hover:text-[#bfa46f]"
               >
                 Menu
               </Link>
 
               <Link
                 href="/venue"
-                className="text-white/65 transition hover:text-[#d4af37]"
+                className="text-white/65 transition hover:text-[#bfa46f]"
               >
                 Venue
               </Link>
 
               <Link
                 href="/booking"
-                className="text-white/65 transition hover:text-[#d4af37]"
+                className="text-white/65 transition hover:text-[#bfa46f]"
               >
                 Book a Table
               </Link>
 
               <Link
                 href="/contact"
-                className="text-white/65 transition hover:text-[#d4af37]"
+                className="text-white/65 transition hover:text-[#bfa46f]"
               >
                 Contact
               </Link>
@@ -606,7 +677,7 @@ export default function Home() {
           </div>
 
 
-          <div className="mt-12 flex flex-col justify-between gap-3 border-t border-white/15 pt-6 text-xs text-white/40 sm:flex-row">
+          <div className="mt-12 flex flex-col justify-between gap-3 border-t border-white/12 pt-6 text-xs text-white/35 sm:flex-row">
 
             <p>
               © {new Date().getFullYear()} Mysore Socials
