@@ -2,5 +2,5 @@ import { createClient } from "@supabase/supabase-js";
 
 export const supabase = createClient(
   "https://crgcfffddrxhzigtnvfj.supabase.co",
-  process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY!
+  "sb_publishable_5FvvES8N3svfDrMEk_vbWA_cvr4a32P"
 );
