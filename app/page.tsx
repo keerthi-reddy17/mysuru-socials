@@ -1,3 +1,4 @@
+
 "use client";
 
 import Link from "next/link";
@@ -43,10 +44,10 @@ const experiences = [
 
 export default function Home() {
   return (
-    <main className="min-h-screen overflow-x-hidden bg-[#050505] text-white">
+    <main className="min-h-screen overflow-x-hidden bg-[#10090C] text-[#F5E9EC]">
 
       {/* NAVBAR */}
-      <header className="fixed left-0 right-0 top-0 z-50 border-b border-[#d4af37]/25 bg-black/95 backdrop-blur-xl">
+      <header className="fixed left-0 right-0 top-0 z-50 border-b border-[#8B2942]/40 bg-black/95 backdrop-blur-xl">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 lg:px-10">
 
           <Link
@@ -54,49 +55,56 @@ export default function Home() {
             className="text-sm font-bold tracking-[0.28em] text-white"
           >
             MYSORE
-            <span className="text-[#d4af37]"> SOCIALS</span>
+            <span className="text-[#8B2942]"> SOCIALS</span>
           </Link>
 
           <nav className="hidden items-center gap-8 text-sm md:flex">
 
             <Link
               href="/"
-              className="font-medium text-[#d4af37] transition hover:text-[#f0cf5a]"
+              className="font-medium text-[#8B2942] transition hover:text-[#B65C73]"
             >
               Home
             </Link>
 
             <a
               href="#experience"
-              className="text-white/75 transition hover:text-[#d4af37]"
+              className="text-white/75 transition hover:text-[#8B2942]"
             >
               Experience
             </a>
 
             <Link
               href="/menu"
-              className="text-white/75 transition hover:text-[#d4af37]"
+              className="text-white/75 transition hover:text-[#8B2942]"
             >
               Menu
             </Link>
 
             <Link
               href="/venue"
-              className="text-white/75 transition hover:text-[#d4af37]"
+              className="text-white/75 transition hover:text-[#8B2942]"
             >
               Venue
             </Link>
 
             <Link
               href="/contact"
-              className="text-white/75 transition hover:text-[#d4af37]"
+              className="text-white/75 transition hover:text-[#8B2942]"
             >
               Contact
             </Link>
 
             <Link
+              href="/kitchen"
+              className="text-white/75 transition hover:text-[#8B2942]"
+            >
+              Kitchen
+            </Link>
+
+            <Link
               href="/booking"
-              className="rounded-full border border-[#d4af37] px-5 py-2.5 font-medium text-[#d4af37] transition hover:bg-[#d4af37] hover:text-black"
+              className="rounded-full border border-[#8B2942]/70 bg-white/[0.04] px-5 py-2.5 font-medium text-[#D99AAA] backdrop-blur-xl transition hover:bg-[#8B2942]/20 hover:text-white"
             >
               Book a Table
             </Link>
@@ -105,14 +113,13 @@ export default function Home() {
 
           <Link
             href="/booking"
-            className="rounded-full bg-[#d4af37] px-5 py-2.5 text-xs font-bold text-black transition hover:bg-[#f0cf5a]"
+            className="rounded-full border border-white/25 bg-[#8B2942]/50 px-5 py-2.5 text-xs font-bold text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.2),0_6px_24px_rgba(80,20,40,0.2)] backdrop-blur-xl transition hover:bg-[#B65C73]/60"
           >
             Book
           </Link>
 
         </div>
       </header>
-
 
       {/* HERO */}
       <section className="relative min-h-screen overflow-hidden">
@@ -129,10 +136,9 @@ export default function Home() {
 
           <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-black/40" />
 
-          <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-black/20 to-black/50" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#10090C] via-black/20 to-black/50" />
 
         </div>
-
 
         <div className="relative z-10 mx-auto flex min-h-screen max-w-7xl items-end px-6 pb-20 pt-32 lg:px-10 lg:pb-28">
 
@@ -140,58 +146,53 @@ export default function Home() {
 
             <div className="flex items-center gap-4">
 
-              <span className="h-px w-12 bg-[#d4af37]" />
+              <span className="h-px w-12 bg-[#8B2942]" />
 
-              <p className="text-xs font-semibold uppercase tracking-[0.4em] text-[#d4af37]">
+              <p className="text-xs font-semibold uppercase tracking-[0.4em] text-[#D99AAA]">
                 Dining • Social • Celebrations
               </p>
 
             </div>
 
-
-            <h1 className="mt-7 text-6xl font-light leading-[0.88] tracking-[-0.04em] text-white sm:text-7xl md:text-8xl lg:text-[9rem]">
+            <h1 className="mt-7 font-serif text-6xl font-light leading-[0.88] tracking-[-0.04em] text-white sm:text-7xl md:text-8xl lg:text-[9rem]">
 
               Good food.
 
               <br />
 
-              <span className="font-normal text-[#d4af37]">
+              <span className="font-serif font-normal text-[#D99AAA]">
                 Better moments.
               </span>
 
             </h1>
-
 
             <p className="mt-8 max-w-xl text-base leading-8 text-white/85 sm:text-lg">
               A place to eat, unwind and spend time with your people.
               Discover food, drinks and celebrations at Mysore Socials.
             </p>
 
-
             <div className="mt-9 flex flex-wrap gap-3">
 
               <Link
                 href="/menu"
-                className="rounded-full bg-[#d4af37] px-8 py-4 text-sm font-bold text-black shadow-[0_8px_35px_rgba(212,175,55,0.25)] transition duration-300 hover:scale-105 hover:bg-[#f0cf5a]"
+                className="rounded-full border border-white/25 bg-[#8B2942]/65 px-8 py-4 text-sm font-bold text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.22),0_8px_35px_rgba(139,41,66,0.3)] backdrop-blur-xl transition duration-300 hover:scale-105 hover:bg-[#B65C73]/75"
               >
                 Explore Menu
               </Link>
 
               <Link
                 href="/booking"
-                className="rounded-full border border-white/50 bg-black/60 px-8 py-4 text-sm font-medium text-white backdrop-blur-md transition duration-300 hover:border-[#d4af37] hover:text-[#d4af37]"
+                className="rounded-full border border-white/35 bg-white/[0.08] px-8 py-4 text-sm font-medium text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.15)] backdrop-blur-xl transition duration-300 hover:border-[#D99AAA] hover:bg-white/[0.14] hover:text-[#F5DCE2]"
               >
                 Book a Table
               </Link>
 
             </div>
 
-
-            {/* HERO INFO */}
             <div className="mt-14 flex flex-wrap gap-x-12 gap-y-5 border-t border-white/30 pt-6">
 
               <div>
-                <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#d4af37]">
+                <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#D99AAA]">
                   Experience
                 </p>
 
@@ -201,7 +202,7 @@ export default function Home() {
               </div>
 
               <div>
-                <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#d4af37]">
+                <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#D99AAA]">
                   Location
                 </p>
 
@@ -211,7 +212,7 @@ export default function Home() {
               </div>
 
               <div>
-                <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#d4af37]">
+                <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#D99AAA]">
                   Events
                 </p>
 
@@ -226,22 +227,18 @@ export default function Home() {
 
         </div>
 
-
-        {/* SCROLL INDICATOR */}
         <a
           href="#experience"
           className="absolute bottom-8 right-6 z-10 hidden items-center gap-3 text-[10px] font-semibold uppercase tracking-[0.3em] text-white/70 md:flex"
         >
           Scroll
-
-          <span className="h-px w-10 bg-[#d4af37]" />
+          <span className="h-px w-10 bg-[#8B2942]" />
         </a>
 
       </section>
 
-
       {/* INTRO */}
-      <section className="border-b border-[#d4af37]/20 bg-[#050505] px-6 py-28 sm:py-36">
+      <section className="border-b border-[#8B2942]/30 bg-[#10090C] px-6 py-28 sm:py-36">
 
         <div className="mx-auto max-w-7xl">
 
@@ -249,22 +246,21 @@ export default function Home() {
 
             <div>
 
-              <p className="text-xs font-bold uppercase tracking-[0.4em] text-[#d4af37]">
+              <p className="text-xs font-bold uppercase tracking-[0.4em] text-[#D99AAA]">
                 The Socials Experience
               </p>
 
-              <h2 className="mt-5 text-5xl font-light leading-[0.95] tracking-tight text-white sm:text-7xl">
+              <h2 className="mt-5 font-serif text-5xl font-light leading-[0.95] tracking-tight text-white sm:text-7xl">
                 Come hungry.
                 <br />
                 Leave with
                 <br />
-                <span className="font-normal text-[#d4af37]">
+                <span className="font-serif font-normal text-[#D99AAA]">
                   memories.
                 </span>
               </h2>
 
             </div>
-
 
             <div>
 
@@ -276,7 +272,7 @@ export default function Home() {
 
               <Link
                 href="/menu"
-                className="mt-8 inline-flex items-center gap-3 text-sm font-semibold text-[#d4af37] transition hover:gap-5 hover:text-[#f0cf5a]"
+                className="mt-8 inline-flex items-center gap-3 text-sm font-semibold text-[#D99AAA] transition hover:gap-5 hover:text-[#B65C73]"
               >
                 Discover the menu
                 <span>→</span>
@@ -290,22 +286,21 @@ export default function Home() {
 
       </section>
 
-
       {/* EXPERIENCE */}
       <section
         id="experience"
-        className="border-y border-[#d4af37]/25 bg-[#090909]"
+        className="border-y border-[#8B2942]/35 bg-[#160D11]"
       >
 
         <div className="mx-auto max-w-7xl px-6 py-28 lg:px-10">
 
           <div className="mb-14">
 
-            <p className="text-xs font-bold uppercase tracking-[0.4em] text-[#d4af37]">
+            <p className="text-xs font-bold uppercase tracking-[0.4em] text-[#D99AAA]">
               Why Mysore Socials
             </p>
 
-            <h2 className="mt-5 max-w-3xl text-4xl font-light tracking-tight text-white sm:text-6xl">
+            <h2 className="mt-5 max-w-3xl font-serif text-4xl font-light tracking-tight text-white sm:text-6xl">
               It&apos;s not just
               <br />
               about what&apos;s on the plate.
@@ -313,29 +308,28 @@ export default function Home() {
 
           </div>
 
-
-          <div className="grid gap-px overflow-hidden rounded-[2rem] border border-[#d4af37]/30 bg-[#d4af37]/20 md:grid-cols-3">
+          <div className="grid gap-px overflow-hidden rounded-[2rem] border border-[#8B2942]/40 bg-[#8B2942]/25 md:grid-cols-3">
 
             {experiences.map((experience) => (
 
               <div
                 key={experience.number}
-                className="group bg-[#0d0d0d] p-8 transition duration-500 hover:bg-[#151208] sm:p-10"
+                className="group bg-[#1B1015] p-8 transition duration-500 hover:bg-[#29131C] sm:p-10"
               >
 
                 <div className="flex items-center justify-between">
 
-                  <span className="text-xs font-bold text-[#d4af37]">
+                  <span className="text-xs font-bold text-[#D99AAA]">
                     {experience.number}
                   </span>
 
-                  <span className="text-[#d4af37]/40 transition group-hover:text-[#d4af37]">
+                  <span className="text-[#8B2942]/60 transition group-hover:text-[#D99AAA]">
                     ✦
                   </span>
 
                 </div>
 
-                <h3 className="mt-20 text-2xl font-semibold text-white">
+                <h3 className="mt-20 font-serif text-2xl font-semibold text-white">
                   {experience.title}
                 </h3>
 
@@ -353,9 +347,8 @@ export default function Home() {
 
       </section>
 
-
       {/* SIGNATURE FOOD */}
-      <section className="bg-[#050505] px-6 py-28 sm:py-36">
+      <section className="bg-[#10090C] px-6 py-28 sm:py-36">
 
         <div className="mx-auto max-w-7xl">
 
@@ -363,11 +356,11 @@ export default function Home() {
 
             <div>
 
-              <p className="text-xs font-bold uppercase tracking-[0.4em] text-[#d4af37]">
+              <p className="text-xs font-bold uppercase tracking-[0.4em] text-[#D99AAA]">
                 From the menu
               </p>
 
-              <h2 className="mt-5 text-5xl font-light tracking-tight text-white sm:text-6xl">
+              <h2 className="mt-5 font-serif text-5xl font-light tracking-tight text-white sm:text-6xl">
                 Worth ordering.
               </h2>
 
@@ -375,13 +368,12 @@ export default function Home() {
 
             <Link
               href="/menu"
-              className="text-sm font-semibold text-[#d4af37] transition hover:text-[#f0cf5a]"
+              className="text-sm font-semibold text-[#D99AAA] transition hover:text-[#B65C73]"
             >
               View full menu →
             </Link>
 
           </div>
-
 
           <div className="mt-14 grid gap-5 md:grid-cols-3">
 
@@ -389,7 +381,7 @@ export default function Home() {
 
               <article
                 key={dish.name}
-                className={`group overflow-hidden rounded-[2rem] border border-[#d4af37]/25 bg-[#0b0b0b] shadow-[0_25px_70px_rgba(0,0,0,0.5)] ${
+                className={`group overflow-hidden rounded-[2rem] border border-[#8B2942]/35 bg-[#170D11] shadow-[0_25px_70px_rgba(0,0,0,0.5)] ${
                   index === 1 ? "md:-translate-y-8" : ""
                 }`}
               >
@@ -406,7 +398,7 @@ export default function Home() {
 
                   <div className="absolute left-5 top-5">
 
-                    <span className="rounded-full border border-[#d4af37] bg-black/80 px-4 py-2 text-[10px] font-bold uppercase tracking-[0.25em] text-[#d4af37] backdrop-blur-md">
+                    <span className="rounded-full border border-[#8B2942]/80 bg-black/80 px-4 py-2 text-[10px] font-bold uppercase tracking-[0.25em] text-[#D99AAA] backdrop-blur-md">
                       Signature Pick
                     </span>
 
@@ -414,16 +406,15 @@ export default function Home() {
 
                 </div>
 
-
                 <div className="p-6">
 
                   <div className="flex items-start justify-between gap-4">
 
-                    <h3 className="text-lg font-semibold leading-snug text-white">
+                    <h3 className="font-serif text-lg font-semibold leading-snug text-white">
                       {dish.name}
                     </h3>
 
-                    <span className="shrink-0 font-bold text-[#d4af37]">
+                    <span className="shrink-0 font-bold text-[#D99AAA]">
                       {dish.price}
                     </span>
 
@@ -433,7 +424,7 @@ export default function Home() {
                     href={`/order?item=${encodeURIComponent(
                       dish.name
                     )}&price=${dish.price.replace("₹", "")}`}
-                    className="mt-6 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-white/55 transition group-hover:text-[#d4af37]"
+                    className="mt-6 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-white/55 transition group-hover:text-[#D99AAA]"
                   >
                     Order this
                     <span>→</span>
@@ -450,7 +441,6 @@ export default function Home() {
         </div>
 
       </section>
-
 
       {/* VENUE FEATURE */}
       <section className="relative overflow-hidden">
@@ -471,14 +461,14 @@ export default function Home() {
 
             <div className="max-w-2xl">
 
-              <p className="text-xs font-bold uppercase tracking-[0.4em] text-[#d4af37]">
+              <p className="text-xs font-bold uppercase tracking-[0.4em] text-[#D99AAA]">
                 More than dining
               </p>
 
-              <h2 className="mt-5 text-5xl font-light leading-[0.95] text-white sm:text-7xl">
+              <h2 className="mt-5 font-serif text-5xl font-light leading-[0.95] text-white sm:text-7xl">
                 Your celebration.
                 <br />
-                <span className="font-normal text-[#d4af37]">
+                <span className="font-serif font-normal text-[#D99AAA]">
                   Our space.
                 </span>
               </h2>
@@ -490,7 +480,7 @@ export default function Home() {
 
               <Link
                 href="/venue"
-                className="mt-9 inline-flex rounded-full bg-[#d4af37] px-7 py-4 text-sm font-bold text-black shadow-[0_8px_35px_rgba(212,175,55,0.25)] transition hover:scale-105 hover:bg-[#f0cf5a]"
+                className="mt-9 inline-flex rounded-full border border-white/25 bg-[#8B2942]/65 px-7 py-4 text-sm font-bold text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.22),0_8px_35px_rgba(139,41,66,0.3)] backdrop-blur-xl transition hover:scale-105 hover:bg-[#B65C73]/75"
               >
                 Explore the Venue
               </Link>
@@ -503,17 +493,16 @@ export default function Home() {
 
       </section>
 
-
       {/* FINAL CTA */}
-      <section className="border-b border-[#d4af37]/20 bg-[#050505] px-6 py-28 sm:py-36">
+      <section className="border-b border-[#8B2942]/30 bg-[#10090C] px-6 py-28 sm:py-36">
 
         <div className="mx-auto max-w-4xl text-center">
 
-          <p className="text-xs font-bold uppercase tracking-[0.4em] text-[#d4af37]">
+          <p className="text-xs font-bold uppercase tracking-[0.4em] text-[#D99AAA]">
             Your table awaits
           </p>
 
-          <h2 className="mt-6 text-5xl font-light leading-[0.95] tracking-tight text-white sm:text-7xl">
+          <h2 className="mt-6 font-serif text-5xl font-light leading-[0.95] tracking-tight text-white sm:text-7xl">
             Make tonight
             <br />
             a little better.
@@ -528,14 +517,14 @@ export default function Home() {
 
             <Link
               href="/booking"
-              className="rounded-full bg-[#d4af37] px-8 py-4 text-sm font-bold text-black transition hover:scale-105 hover:bg-[#f0cf5a]"
+              className="rounded-full border border-white/25 bg-[#8B2942]/65 px-8 py-4 text-sm font-bold text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.22),0_8px_35px_rgba(139,41,66,0.3)] backdrop-blur-xl transition hover:scale-105 hover:bg-[#B65C73]/75"
             >
               Book a Table
             </Link>
 
             <Link
               href="/menu"
-              className="rounded-full border border-white/40 px-8 py-4 text-sm font-medium text-white transition hover:border-[#d4af37] hover:text-[#d4af37]"
+              className="rounded-full border border-white/35 bg-white/[0.08] px-8 py-4 text-sm font-medium text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.15)] backdrop-blur-xl transition hover:border-[#D99AAA] hover:bg-white/[0.14] hover:text-[#F5DCE2]"
             >
               Browse the Menu
             </Link>
@@ -546,9 +535,8 @@ export default function Home() {
 
       </section>
 
-
       {/* FOOTER */}
-      <footer className="border-t border-[#d4af37]/20 bg-black px-6 py-12">
+      <footer className="border-t border-[#8B2942]/30 bg-black px-6 py-12">
 
         <div className="mx-auto max-w-7xl">
 
@@ -561,7 +549,7 @@ export default function Home() {
                 className="text-xl font-bold tracking-[0.2em] text-white"
               >
                 MYSORE
-                <span className="text-[#d4af37]"> SOCIALS</span>
+                <span className="text-[#8B2942]"> SOCIALS</span>
               </Link>
 
               <p className="mt-4 max-w-sm text-sm leading-7 text-white/55">
@@ -570,33 +558,32 @@ export default function Home() {
 
             </div>
 
-
             <div className="grid grid-cols-2 gap-x-16 gap-y-4 text-sm">
 
               <Link
                 href="/menu"
-                className="text-white/65 transition hover:text-[#d4af37]"
+                className="text-white/65 transition hover:text-[#D99AAA]"
               >
                 Menu
               </Link>
 
               <Link
                 href="/venue"
-                className="text-white/65 transition hover:text-[#d4af37]"
+                className="text-white/65 transition hover:text-[#D99AAA]"
               >
                 Venue
               </Link>
 
               <Link
                 href="/booking"
-                className="text-white/65 transition hover:text-[#d4af37]"
+                className="text-white/65 transition hover:text-[#D99AAA]"
               >
                 Book a Table
               </Link>
 
               <Link
                 href="/contact"
-                className="text-white/65 transition hover:text-[#d4af37]"
+                className="text-white/65 transition hover:text-[#D99AAA]"
               >
                 Contact
               </Link>
@@ -604,7 +591,6 @@ export default function Home() {
             </div>
 
           </div>
-
 
           <div className="mt-12 flex flex-col justify-between gap-3 border-t border-white/15 pt-6 text-xs text-white/40 sm:flex-row">
 
@@ -625,3 +611,4 @@ export default function Home() {
     </main>
   );
 }
+

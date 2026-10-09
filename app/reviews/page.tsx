@@ -1,3 +1,4 @@
+
 export default function ReviewsPage() {
   const reviews = [
     {
@@ -23,149 +24,164 @@ export default function ReviewsPage() {
   ];
 
   return (
-    <main className="min-h-screen bg-[#11100e] text-[#f5efe5]">
+    <main className="min-h-screen overflow-hidden bg-[#10090c] font-[Arial,sans-serif] text-[#f5e9ec]">
 
-      {/* Header */}
-      <section className="px-6 pb-16 pt-36">
-        <div className="mx-auto max-w-6xl">
+      {/* HEADER */}
+      <section className="relative px-6 pb-16 pt-36">
+        <div className="pointer-events-none absolute right-0 top-20 h-80 w-80 rounded-full bg-[#8b2942]/10 blur-[100px]" />
 
+        <div className="relative mx-auto max-w-6xl">
           <a
             href="/"
-            className="text-sm text-white/50 transition hover:text-[#c9a878]"
+            className="inline-flex rounded-full border border-[#d99aaa]/20 bg-white/[0.04] px-4 py-2 text-sm text-[#d0b8c0] backdrop-blur-xl transition hover:border-[#d99aaa]/50 hover:bg-[#8b2942]/20 hover:text-[#f5e9ec]"
           >
             ← Back to Home
           </a>
 
           <div className="mt-12 max-w-4xl">
-            <p className="text-sm uppercase tracking-[0.35em] text-[#c9a878]">
+            <p className="text-xs uppercase tracking-[0.35em] text-[#d99aaa]">
               Guest Reviews
             </p>
 
-            <h1 className="mt-5 text-5xl font-semibold tracking-tight sm:text-7xl">
+            <h1 className="mt-5 font-[Georgia,serif] text-5xl font-semibold leading-[1.05] tracking-tight text-[#f5e9ec] sm:text-7xl">
               Good food.
               <br />
-              Good words.
+              <span className="text-[#b65c73]">Good words.</span>
             </h1>
 
-            <p className="mt-7 max-w-2xl text-base leading-8 text-white/50 sm:text-lg">
+            <p className="mt-7 max-w-2xl text-base leading-8 text-[#c6aeb5] sm:text-lg">
               See what guests have to say about their experience at
               Mysore Socials.
             </p>
           </div>
-
         </div>
       </section>
 
-      {/* Rating */}
+      {/* RATING */}
       <section className="px-6 pb-20">
         <div className="mx-auto max-w-6xl">
+          <div className="relative overflow-hidden rounded-[2rem] border border-[#d99aaa]/20 bg-gradient-to-br from-[#321721]/90 via-[#211017]/90 to-[#160b10]/95 p-8 shadow-[0_20px_60px_rgba(0,0,0,0.2)] backdrop-blur-2xl sm:p-10">
+            <div className="pointer-events-none absolute -right-16 -top-20 h-64 w-64 rounded-full bg-[#8b2942]/20 blur-[80px]" />
 
-          <div className="rounded-[2rem] border border-white/10 bg-[#171512] p-8 sm:p-10">
-
-            <div className="flex flex-col gap-8 sm:flex-row sm:items-center sm:justify-between">
-
+            <div className="relative flex flex-col gap-8 sm:flex-row sm:items-center sm:justify-between">
               <div>
-                <p className="text-sm uppercase tracking-[0.25em] text-white/30">
+                <p className="text-xs uppercase tracking-[0.25em] text-[#b99da7]">
                   Overall Experience
                 </p>
 
-                <div className="mt-3 flex items-center gap-4">
-                  <span className="text-6xl font-semibold">
+                <div className="mt-3 flex flex-wrap items-center gap-4">
+                  <span className="font-[Georgia,serif] text-6xl font-semibold text-[#fff5f7]">
                     4.1
                   </span>
 
                   <div>
-                    <div className="text-xl tracking-widest text-[#c9a878]">
+                    <div
+                      className="text-xl tracking-widest text-[#d99aaa]"
+                      aria-label="Five stars displayed"
+                    >
                       ★★★★★
                     </div>
 
-                    <p className="mt-1 text-sm text-white/40">
+                    <p className="mt-1 text-sm text-[#b99da7]">
                       Based on publicly listed reviews
                     </p>
                   </div>
                 </div>
               </div>
 
-              <div className="max-w-sm text-sm leading-7 text-white/50">
+              <div className="max-w-sm text-sm leading-7 text-[#c6aeb5]">
                 From casual meals to celebrations and gatherings, guests
                 come for the food, atmosphere and setting.
               </div>
-
             </div>
-
           </div>
-
         </div>
       </section>
 
-      {/* Reviews */}
+      {/* REVIEWS */}
       <section className="px-6 pb-24">
         <div className="mx-auto max-w-6xl">
+          <div className="mb-8">
+            <p className="text-xs uppercase tracking-[0.3em] text-[#d99aaa]">
+              Words from our guests
+            </p>
+
+            <h2 className="mt-4 font-[Georgia,serif] text-3xl font-semibold text-[#f5e9ec] sm:text-4xl">
+              Moments worth sharing.
+            </h2>
+          </div>
 
           <div className="grid gap-5 md:grid-cols-2">
-
             {reviews.map((review, index) => (
-              <div
+              <article
                 key={index}
-                className="rounded-[2rem] border border-white/10 bg-white/[0.03] p-7 transition duration-300 hover:-translate-y-1 hover:border-[#c9a878]/30 sm:p-8"
+                className="group rounded-[2rem] border border-[#d99aaa]/15 bg-white/[0.035] p-7 shadow-[inset_0_1px_0_rgba(255,255,255,0.07),0_12px_35px_rgba(0,0,0,0.12)] backdrop-blur-2xl transition duration-300 hover:-translate-y-1 hover:border-[#d99aaa]/40 hover:bg-[#8b2942]/10 sm:p-8"
               >
+                <div className="flex items-center justify-between gap-4">
+                  <div className="flex items-center gap-3">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-full border border-[#d99aaa]/25 bg-[#8b2942]/25 font-[Georgia,serif] text-lg text-[#e5a8b8]">
+                      G
+                    </div>
 
-                <div className="flex items-center justify-between">
-                  <span className="text-sm text-white/50">
-                    {review.name}
-                  </span>
+                    <span className="text-sm text-[#d0b8c0]">
+                      {review.name}
+                    </span>
+                  </div>
 
-                  <span className="text-sm tracking-widest text-[#c9a878]">
+                  <span
+                    className="text-sm tracking-widest text-[#d99aaa]"
+                    aria-label={`${review.rating} out of 5 stars`}
+                  >
                     {"★".repeat(review.rating)}
                   </span>
                 </div>
 
-                <p className="mt-6 text-lg leading-8 text-white/70">
+                <p className="mt-6 text-lg leading-8 text-[#e5d7dc]">
                   “{review.text}”
                 </p>
 
-              </div>
+                <div className="mt-6 h-px w-12 bg-[#8b2942]/80 transition-all duration-300 group-hover:w-20 group-hover:bg-[#d99aaa]" />
+              </article>
             ))}
-
           </div>
-
         </div>
       </section>
 
-      {/* Review CTA */}
-      <section className="border-t border-white/10 px-6 py-24">
+      {/* REVIEW CTA */}
+      <section className="border-t border-[#d99aaa]/15 bg-gradient-to-b from-[#1c0d13]/60 to-transparent px-6 py-24">
         <div className="mx-auto max-w-4xl text-center">
-
-          <p className="text-sm uppercase tracking-[0.3em] text-[#c9a878]">
+          <p className="text-xs uppercase tracking-[0.3em] text-[#d99aaa]">
             Your experience matters
           </p>
 
-          <h2 className="mt-5 text-4xl font-semibold sm:text-5xl">
+          <h2 className="mt-5 font-[Georgia,serif] text-4xl font-semibold leading-tight text-[#f5e9ec] sm:text-5xl">
             Been here before?
           </h2>
 
-          <p className="mx-auto mt-5 max-w-xl leading-7 text-white/50">
+          <p className="mx-auto mt-5 max-w-xl leading-7 text-[#c6aeb5]">
             We’d love to hear about your experience at Mysore Socials.
           </p>
 
           <a
             href="/contact"
-            className="mt-8 inline-block rounded-full bg-[#c9a878] px-8 py-4 font-medium text-[#11100e] transition duration-300 hover:scale-[1.02] hover:bg-[#d8bb91]"
+            className="mt-8 inline-flex items-center justify-center rounded-full border border-[#d99aaa]/40 bg-gradient-to-br from-[#a6425d]/90 to-[#6e2037]/90 px-8 py-4 font-medium text-[#fff5f7] shadow-[inset_0_1px_0_rgba(255,255,255,0.2),0_8px_28px_rgba(82,18,39,0.3)] backdrop-blur-xl transition duration-300 hover:-translate-y-0.5 hover:from-[#b6506b] hover:to-[#812943]"
           >
-            Share Your Experience
+            Share Your Experience →
           </a>
-
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="border-t border-white/10 px-6 py-10">
-        <div className="mx-auto flex max-w-6xl flex-col justify-between gap-4 text-sm text-white/40 sm:flex-row">
-          <p>MYSORE SOCIALS</p>
+      {/* FOOTER */}
+      <footer className="border-t border-[#d99aaa]/15 px-6 py-10">
+        <div className="mx-auto flex max-w-6xl flex-col justify-between gap-4 text-sm text-[#b99da7] sm:flex-row">
+          <p className="tracking-[0.2em] text-[#d99aaa]">
+            MYSORE SOCIALS
+          </p>
+
           <p>© 2026 Mysore Socials</p>
         </div>
       </footer>
-
     </main>
   );
 }
+

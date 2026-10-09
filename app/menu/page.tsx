@@ -1,3 +1,4 @@
+
 "use client";
 
 import Link from "next/link";
@@ -42,7 +43,6 @@ const menuItems: MenuItem[] = [
     image:
       "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1200&q=90",
   },
-
   {
     name: "Veg Fried Rice",
     price: 159,
@@ -67,7 +67,6 @@ const menuItems: MenuItem[] = [
     image:
       "https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&fit=crop&w=1200&q=90",
   },
-
   {
     name: "Veg Hakka Noodles",
     price: 159,
@@ -84,7 +83,6 @@ const menuItems: MenuItem[] = [
     image:
       "https://images.unsplash.com/photo-1557872943-16a5ac26437e?auto=format&fit=crop&w=1200&q=90",
   },
-
   {
     name: "Veg Manchurian Gravy",
     price: 159,
@@ -101,7 +99,6 @@ const menuItems: MenuItem[] = [
     image:
       "https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&fit=crop&w=1200&q=90",
   },
-
   {
     name: "Veg Pasta",
     price: 279,
@@ -118,14 +115,13 @@ const menuItems: MenuItem[] = [
     image:
       "https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=1200&q=90",
   },
-
   {
     name: "Veg Lasagna",
     price: 279,
     type: "Veg",
     category: "Lasagna",
     image:
-      "https://images.unsplash.com/photo-1574894709920-11b28e7367a0?auto=format&fit=crop&w=1200&q=90",
+      "https://images.unsplash.com/photo-1709429790175-b02bb1b19207?auto=format&fit=crop&w=1200&q=90",
   },
   {
     name: "Chicken Lasagna",
@@ -133,7 +129,7 @@ const menuItems: MenuItem[] = [
     type: "Non-Veg",
     category: "Lasagna",
     image:
-      "https://images.unsplash.com/photo-1574894709920-11b28e7367a0?auto=format&fit=crop&w=1200&q=90",
+      "https://images.unsplash.com/photo-1574894709920-11b28e7367e3?auto=format&fit=crop&w=1200&q=90",
   },
 ];
 
@@ -228,20 +224,29 @@ export default function MenuPage() {
 
         body {
           margin: 0;
-          background: #050505;
-          color: #f5efe5;
+          background: #10090c;
+          color: #f5e9ec;
           font-family: Arial, Helvetica, sans-serif;
+          -webkit-font-smoothing: antialiased;
         }
 
         .menu-page {
+          --wine: #8b2942;
+          --wine-light: #b65c73;
+          --wine-dark: #541629;
+          --rose: #d99aaa;
+          --text: #f5e9ec;
+          --muted: #c4afb4;
+
           min-height: 100vh;
           background:
             radial-gradient(
               circle at 50% 0%,
-              rgba(212, 175, 55, 0.09),
-              transparent 35%
+              rgba(139, 41, 66, 0.2),
+              transparent 38%
             ),
-            #050505;
+            #10090c;
+          color: var(--text);
           overflow: hidden;
         }
 
@@ -254,34 +259,35 @@ export default function MenuPage() {
           align-items: center;
           justify-content: space-between;
           padding: 0 6vw;
-          border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-          background: rgba(5, 5, 5, 0.88);
-          backdrop-filter: blur(18px);
+          border-bottom: 1px solid rgba(217, 154, 170, 0.13);
+          background: rgba(16, 9, 12, 0.82);
+          backdrop-filter: blur(22px);
+          -webkit-backdrop-filter: blur(22px);
         }
 
         .brand {
           text-decoration: none;
-          color: #f5efe5;
+          color: var(--text);
           letter-spacing: 5px;
           font-size: 17px;
           font-weight: 700;
         }
 
         .brand span {
-          color: #d4af37;
+          color: var(--rose);
         }
 
         .back-link {
           text-decoration: none;
-          color: #d4af37;
+          color: var(--rose);
           font-size: 12px;
           letter-spacing: 2px;
           text-transform: uppercase;
-          transition: 0.3s ease;
+          transition: color 0.3s ease;
         }
 
         .back-link:hover {
-          color: #fff;
+          color: #ffffff;
         }
 
         .menu-header {
@@ -290,7 +296,7 @@ export default function MenuPage() {
         }
 
         .eyebrow {
-          color: #d4af37;
+          color: var(--rose);
           font-size: 11px;
           letter-spacing: 5px;
           text-transform: uppercase;
@@ -304,12 +310,13 @@ export default function MenuPage() {
           font-weight: 400;
           line-height: 0.9;
           letter-spacing: -5px;
+          color: var(--text);
         }
 
         .menu-subtitle {
           max-width: 570px;
           margin: 30px auto 0;
-          color: rgba(245, 239, 229, 0.62);
+          color: rgba(245, 233, 236, 0.66);
           font-size: 14px;
           line-height: 1.8;
         }
@@ -323,23 +330,41 @@ export default function MenuPage() {
         }
 
         .filter-button {
-          border: 1px solid rgba(212, 175, 55, 0.28);
-          background: transparent;
-          color: rgba(245, 239, 229, 0.65);
+          border: 1px solid rgba(217, 154, 170, 0.25);
+          background: rgba(255, 255, 255, 0.035);
+          color: rgba(245, 233, 236, 0.72);
           padding: 12px 20px;
           border-radius: 999px;
+          font-family: Arial, Helvetica, sans-serif;
           font-size: 11px;
           letter-spacing: 1.5px;
           text-transform: uppercase;
           cursor: pointer;
-          transition: all 0.3s ease;
+          -webkit-backdrop-filter: blur(16px);
+          backdrop-filter: blur(16px);
+          box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+          transition:
+            background 0.3s ease,
+            border-color 0.3s ease,
+            color 0.3s ease,
+            box-shadow 0.3s ease,
+            transform 0.3s ease;
         }
 
-        .filter-button:hover,
+        .filter-button:hover {
+          background: rgba(182, 92, 115, 0.18);
+          border-color: rgba(217, 154, 170, 0.5);
+          color: #ffffff;
+          transform: translateY(-2px);
+        }
+
         .filter-button.active {
-          background: #d4af37;
-          border-color: #d4af37;
-          color: #050505;
+          background: rgba(139, 41, 66, 0.55);
+          border-color: rgba(217, 154, 170, 0.62);
+          color: #fff4f6;
+          box-shadow:
+            inset 0 1px 0 rgba(255, 255, 255, 0.16),
+            0 5px 22px rgba(139, 41, 66, 0.2);
         }
 
         .menu-list {
@@ -355,7 +380,7 @@ export default function MenuPage() {
           justify-content: space-between;
           gap: 90px;
           padding: 65px 0;
-          border-top: 1px solid rgba(255, 255, 255, 0.1);
+          border-top: 1px solid rgba(217, 154, 170, 0.14);
           opacity: 0;
           transform: translateY(35px);
           transition:
@@ -388,10 +413,10 @@ export default function MenuPage() {
           flex-shrink: 0;
           border-radius: 50%;
           overflow: hidden;
-          border: 1px solid rgba(212, 175, 55, 0.3);
+          border: 1px solid rgba(217, 154, 170, 0.35);
           box-shadow:
-            0 0 0 10px rgba(212, 175, 55, 0.025),
-            0 20px 60px rgba(0, 0, 0, 0.55);
+            0 0 0 10px rgba(139, 41, 66, 0.07),
+            0 20px 60px rgba(0, 0, 0, 0.48);
           transform: translateX(75px) scale(0.9);
           opacity: 0;
           transition:
@@ -417,7 +442,7 @@ export default function MenuPage() {
         }
 
         .dish-category {
-          color: #d4af37;
+          color: var(--rose);
           font-size: 10px;
           letter-spacing: 4px;
           text-transform: uppercase;
@@ -432,6 +457,7 @@ export default function MenuPage() {
           font-size: clamp(34px, 4vw, 56px);
           line-height: 1.05;
           letter-spacing: -1.5px;
+          color: var(--text);
         }
 
         .dish-bottom {
@@ -442,7 +468,7 @@ export default function MenuPage() {
         }
 
         .dish-price {
-          color: #f5efe5;
+          color: var(--text);
           font-size: 18px;
           font-weight: 600;
         }
@@ -451,7 +477,7 @@ export default function MenuPage() {
           display: inline-flex;
           align-items: center;
           gap: 7px;
-          color: rgba(245, 239, 229, 0.5);
+          color: rgba(245, 233, 236, 0.58);
           font-size: 11px;
           letter-spacing: 1px;
           text-transform: uppercase;
@@ -465,17 +491,23 @@ export default function MenuPage() {
         }
 
         .dish-type.veg .type-dot {
-          background: #4caf50;
+          background: #63bd83;
         }
 
         .dish-type.nonveg .type-dot {
-          background: #d9534f;
+          background: #e4777e;
         }
 
         .menu-cta {
           text-align: center;
           padding: 100px 20px 130px;
-          border-top: 1px solid rgba(255, 255, 255, 0.08);
+          border-top: 1px solid rgba(217, 154, 170, 0.14);
+          background:
+            radial-gradient(
+              circle at 50% 100%,
+              rgba(139, 41, 66, 0.13),
+              transparent 60%
+            );
         }
 
         .menu-cta h2 {
@@ -483,10 +515,11 @@ export default function MenuPage() {
           font-family: Georgia, "Times New Roman", serif;
           font-size: clamp(38px, 6vw, 75px);
           font-weight: 400;
+          color: var(--text);
         }
 
         .menu-cta p {
-          color: rgba(245, 239, 229, 0.55);
+          color: rgba(245, 233, 236, 0.62);
           margin: 20px auto 35px;
           font-size: 14px;
         }
@@ -494,19 +527,39 @@ export default function MenuPage() {
         .order-button {
           display: inline-block;
           text-decoration: none;
-          background: #d4af37;
-          color: #050505;
-          padding: 15px 30px;
+          background: rgba(139, 41, 66, 0.4);
+          color: #fff4f6;
+          border: 1px solid rgba(217, 154, 170, 0.4);
+          border-radius: 999px;
+          padding: 16px 34px;
+          font-family: Arial, Helvetica, sans-serif;
           font-size: 11px;
           font-weight: 700;
           letter-spacing: 2px;
           text-transform: uppercase;
-          transition: 0.3s ease;
+          -webkit-backdrop-filter: blur(18px);
+          backdrop-filter: blur(18px);
+          box-shadow:
+            inset 0 1px 0 rgba(255, 255, 255, 0.14),
+            0 8px 30px rgba(0, 0, 0, 0.18);
+          transition:
+            background 0.3s ease,
+            border-color 0.3s ease,
+            box-shadow 0.3s ease,
+            transform 0.3s ease;
         }
 
         .order-button:hover {
-          background: #f5efe5;
-          transform: translateY(-2px);
+          background: rgba(182, 92, 115, 0.52);
+          border-color: rgba(245, 233, 236, 0.55);
+          box-shadow:
+            inset 0 1px 0 rgba(255, 255, 255, 0.2),
+            0 10px 32px rgba(139, 41, 66, 0.24);
+          transform: translateY(-3px);
+        }
+
+        .order-button:active {
+          transform: scale(0.98);
         }
 
         @media (max-width: 800px) {
@@ -632,3 +685,4 @@ export default function MenuPage() {
     </main>
   );
 }
+
